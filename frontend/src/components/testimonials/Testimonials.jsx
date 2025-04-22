@@ -45,16 +45,18 @@ const Testimonials = () => {
       <h2>What our Students Say</h2>
       <div className="testimonials-cards">
         {testimonialsData.map((e) => {
-          <div className="testimonial-card" key={e.id}>
-            <div className="student-image">
-              <img src="{e.image}" alt="" />
+          return (
+            <div className="testimonial-card" key={e.id}>
+              <div className="student-image">
+                <img src="{e.image}" alt="" />
+              </div>
+              <p className="message">{e.message}</p>
+              <div className="info">
+                <p className="name">{e.name}</p>
+                <p className="position">{e.position}</p>
+              </div>
             </div>
-            <p className="message">{e.message}</p>
-            <div className="info">
-              <p className="name">{e.name}</p>
-              <p className="position">{e.position}</p>
-            </div>
-          </div>;
+          );
         })}
       </div>
     </section>
